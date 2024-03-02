@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Times Pokémon</title>
+</head>
+<body>
+    <h1>Gerador de Times Pokémon</h1>
+    <form action="/gerar_time" method="post">
+        <label for="nome_usuario">Nome do Usuário:</label>
+        <input type="text" id="nome_usuario" name="nome_usuario" required><br><br>
+
+        <label for="lista_pokemons">Lista de Pokémons (separados por vírgula):</label>
+        <input type="text" id="lista_pokemons" name="lista_pokemons" required><br><br>
+
+        <input type="submit" value="Gerar Time">
+    </form>
+    
+</body>
+
+</html>
