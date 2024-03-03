@@ -1,0 +1,63 @@
+/* Estilos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9b9a9a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para o cabeçalho */
+h1,h2 {
+    color: #333;
+    text-align: center;
+}
+
+
+/* Estilos para os formulários */
+form {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #858484;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para os campos de entrada */
+input[type="text"], select, input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para a lista de times */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilos para os itens da lista de times */
+li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para os itens da lista de Pokémon */
+ul li ul {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+/* Estilos para os itens da lista de Pokémon */
+ul li ul li {
+    margin-bottom: 5px;
+}
+

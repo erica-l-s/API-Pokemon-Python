@@ -4,19 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Time e Pokémon</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Cadastro de Time e Pokémon</h1>
 
-    <!-- Formulário para adicionar um time -->
-    <h2>Adicionar Time</h2>
-    <form id="addTeamForm" action="/api/teams" method="post">
-        <label for="owner">Nome do Dono do Time:</label><br>
-        <input type="text" id="owner" name="user" required><br><br>
-        <input type="submit" value="Adicionar Time">
-    </form>
-
-    <!-- Formulário para escolher Pokémon -->
+     <!-- Formulário para escolher Pokémon -->
     <h2>Escolher Pokémon</h2>
     <form id="choosePokemonForm" action="/api/teams" method="post">
         <label for="user">Nome do Dono do Time:</label><br>
@@ -29,7 +22,7 @@
         {% endfor %}
         </select><br><br>
 
-        <input type="submit" value="Criar Time">
+        <input type="submit" value="Criar Time ou Atualizar">
     </form>
 
         <!-- Lista de times já cadastrados -->

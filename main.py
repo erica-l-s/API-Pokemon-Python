@@ -74,7 +74,7 @@ def get_team_by_username(username):
     if username in teams:
         return jsonify(teams[username])
     else:
-        return jsonify({'error': 'Time não encontrado para o usuário especificado'}), 404
+        return jsonify({'error': 'Time nao encontrado para o usuario especificado'}), 404
 
 # Rota para criar um novo time ou adicionar Pokémon a um time existente
 @app.route('/api/teams', methods=['POST'])
@@ -82,7 +82,7 @@ def create_team():
     data = request.form
 
     if 'user' not in data or 'pokemons[]' not in data:
-        return jsonify({'error': 'Os campos user e pokemons são obrigatórios'}), 400
+        return jsonify({'error': 'Os campos user e pokemons sao obrigatorios'}), 400
 
     username = data['user']
     pokemon_names = data.getlist('pokemons[]')
@@ -102,10 +102,10 @@ def create_team():
                         'weight': pokemon_info.weight
                     })
                 else:
-                    return jsonify({'error': f'Pokémon não encontrado: {pokemon_name}'}), 400
+                    return jsonify({'error': f'Pokemon nao encontrado: {pokemon_name}'}), 400
             else:
-                return jsonify({'error': f'O Pokémon {pokemon_name} já está na lista do time'}), 400
-        return jsonify({'message': 'Pokémons adicionados ao time existente', 'team_id': team['id']}), 200
+                return jsonify({'error': f'O Pokemon {pokemon_name} já esta na lista do time'}), 400
+        return jsonify({'message': f'Pokemon {pokemon_name} adicionado ao time existente', 'team_id': team['id']}), 200
     else:
         # Se o usuário não possuir um time registrado, cria um novo time
         team_id = str(uuid.uuid4())
@@ -121,10 +121,10 @@ def create_team():
                     'weight': pokemon_info.weight
                 })
             else:
-                return jsonify({'error': f'Pokémon não encontrado: {pokemon_name}'}), 400
+                return jsonify({'error': f'Pokemon nao encontrado: {pokemon_name}'}), 400
 
         teams[username] = team
-        return jsonify({'message': 'Time criado com sucesso', 'team_id': team_id}), 201
+        return jsonify({'message': f'Time {username} criado com sucesso', 'team_id': team_id}), 201
 
 
 if __name__ == '__main__':
