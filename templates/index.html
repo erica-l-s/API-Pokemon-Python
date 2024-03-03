@@ -3,20 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Times Pokémon</title>
+    <title>Cadastro de Time e Pokémon</title>
 </head>
 <body>
-    <h1>Gerador de Times Pokémon</h1>
-    <form action="/gerar_time" method="post">
-        <label for="nome_usuario">Nome do Usuário:</label>
-        <input type="text" id="nome_usuario" name="nome_usuario" required><br><br>
+    <h1>Cadastro de Time e Pokémon</h1>
 
-        <label for="lista_pokemons">Lista de Pokémons (separados por vírgula):</label>
-        <input type="text" id="lista_pokemons" name="lista_pokemons" required><br><br>
-
-        <input type="submit" value="Gerar Time">
+    <!-- Formulário para adicionar um time -->
+    <h2>Adicionar Time</h2>
+    <form id="addTeamForm" action="/api/teams" method="post">
+        <label for="owner">Nome do Dono do Time:</label><br>
+        <input type="text" id="owner" name="user" required><br><br>
+        <input type="submit" value="Adicionar Time">
     </form>
-    
-</body>
 
+    <!-- Formulário para escolher Pokémon -->
+    <h2>Escolher Pokémon</h2>
+    <form id="choosePokemonForm" action="/api/teams" method="post">
+        <label for="user">Nome do Dono do Time:</label><br>
+        <input type="text" id="user" name="user" required><br><br>
+
+        <label for="team">Selecione os Pokémon para o Time:</label><br>
+        <select name="pokemons[]" id="team" multiple required>
+            {% for pokemon in pokemon_options %}
+            <option value="{{ pokemon }}">{{ pokemon }}</option>
+        {% endfor %}
+        </select><br><br>
+
+        <input type="submit" value="Criar Time">
+    </form>
+
+        <!-- Lista de times já cadastrados -->
+        <h2>Times Cadastrados</h2>
+        <ul>
+            {% for team in teams %}
+                <li>Nome do Time: {{ team.user }} - ID:{{ team.id }}</li>
+                <ul>
+                    {% for pokemon in team.pokemons %}
+                        <li>Pokemon: {{ pokemon.name }} - Altura: {{ pokemon.height }} - Peso: {{ pokemon.weight }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
+    </body>
+    </html>
+</body>
 </html>
+
+
+
