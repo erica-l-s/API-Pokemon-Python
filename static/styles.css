@@ -3,16 +3,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #9b9a9a;
+    background-color: #ee1515;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #ccc;
 }
 
 /* Estilos para o cabeçalho */
 h1,h2 {
-    color: #333;
     text-align: center;
 }
 
@@ -23,13 +23,14 @@ form {
     width: 80%;
     max-width: 600px;
     padding: 20px;
-    background-color: #858484;
+    background-color: #f0f0f0;
+    color: black;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para os campos de entrada */
-input[type="text"], select, input[type="submit"] {
+input[type="text"], select {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -39,6 +40,20 @@ input[type="text"], select, input[type="submit"] {
     box-sizing: border-box;
 }
 
+input[type="submit"]{
+    margin-top: 5px;
+    padding: 10px;
+    width: 30%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ee1515;
+    cursor: pointer;
+    
+}
+input[type="submit"]:hover{
+    background-color: #f34848;
+}
 /* Estilos para a lista de times */
 ul {
     border: 1px solid #ccc;
