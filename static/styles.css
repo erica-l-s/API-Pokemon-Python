@@ -41,23 +41,20 @@ input[type="text"], select, input[type="submit"] {
 
 /* Estilos para a lista de times */
 ul {
-    list-style-type: none;
+    border: 1px solid #ccc;
+    background-color: rgb(253, 96, 91);
+    border-radius: 5px;
+    box-sizing: border-box;
     padding: 0;
+    
 }
 
-/* Estilos para os itens da lista de times */
-li {
-    margin-bottom: 10px;
-}
 
 /* Estilos para os itens da lista de Pokémon */
-ul li ul {
+ul, li {
     margin-top: 5px;
     margin-left: 20px;
-}
-
-/* Estilos para os itens da lista de Pokémon */
-ul li ul li {
     margin-bottom: 5px;
 }
+
 
