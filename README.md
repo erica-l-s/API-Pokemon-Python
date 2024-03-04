@@ -59,7 +59,7 @@ docker build -t python-pokemon .
 2. Run the Docker container:
 
 ``` 
-docker run -p 5000:5000 flask-pokemon-teams
+docker run -p 5000:5000 python-pokemon
 ```
 
 The Flask API will be accessible at *http://localhost:5000* within the Docker container.
