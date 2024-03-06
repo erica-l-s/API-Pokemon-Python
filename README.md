@@ -54,12 +54,12 @@ This project also includes a Dockerfile for containerization. To build a Docker 
 1. Build the Docker image:
 
 ```
-docker build -t python-pokemon .
+docker build -t pokemon-api .
 ```
 2. Run the Docker container:
 
 ``` 
-docker run -p 5000:5000 python-pokemon
+docker run --rm -p 5000:5000 pokemon-api
 ```
 
 The Flask API will be accessible at *http://localhost:5000* within the Docker container.
